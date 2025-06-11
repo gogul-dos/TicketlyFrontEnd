@@ -1,0 +1,188 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+.register-page {
+  min-height: 100vh;
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.register-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 720px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  animation: fadeSlideUp 0.6s ease-out;
+}
+
+.register-logo {
+  height: 120px;
+  display: block;
+  margin: 0 auto 20px;
+  animation: popIn 0.6s ease-out;
+}
+
+.register-title {
+  text-align: center;
+  font-size: 26px;
+  color: #3a4a9f;
+  margin-bottom: 25px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.row > * {
+  flex: 1;
+  min-width: 260px;
+}
+
+.floating-input {
+  position: relative;
+}
+
+.floating-input input {
+  width: 100%;
+  padding: 14px 14px 14px 40px;
+  border: 1.5px solid #ccc;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: 0.3s ease;
+  outline: none;
+}
+
+.floating-input input:focus {
+  border-color: #4b6cb7;
+  box-shadow: 0 0 8px rgba(75, 108, 183, 0.2);
+}
+
+.floating-input label {
+  position: absolute;
+  left: 40px;
+  top: 14px;
+  color: #888;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  font-size: 14px;
+}
+
+.floating-input input:focus + label,
+.floating-input input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 35px;
+  font-size: 12px;
+  background: #fff;
+  padding: 0 5px;
+  color: #3a4a9f;
+}
+
+.floating-input .icon {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-size: 16px;
+  color: #888;
+  animation: iconPop 0.6s ease;
+}
+
+/* Button */
+.register-btn {
+  padding: 14px;
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  border: none;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  box-shadow: 0 6px 16px rgba(75, 108, 183, 0.3);
+}
+
+.register-btn:hover {
+  transform: scale(1.02);
+  background: linear-gradient(to right, #3a539b, #1a2c5b);
+}
+
+.register-btn:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}
+
+/* Error message */
+.error-msg {
+  color: #e63946;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Switch text */
+.switch-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.switch-link {
+  color: #4b6cb7;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.switch-link:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes iconPop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Fix gap when row has only one input */
+.row.single > * {
+  flex: 1 1 100%;
+  min-width: 100%;
+}

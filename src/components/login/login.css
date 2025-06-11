@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+.login-inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-logo {
+  height: 150px;
+  margin-bottom: 20px;
+  animation: logoPop 1s ease-out;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.login-form-container {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 320px;
+  max-width: 400px;
+  width: 100%;
+  animation: fadeInUp 0.8s ease;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.input-group label {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  background: white;
+  padding: 0 6px;
+  color: #666;
+  transition: 0.2s ease all;
+  pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -9px;
+  left: 10px;
+  font-size: 12px;
+  color: #4b6cb7;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 14px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.login-form-container button {
+  padding: 14px;
+  font-size: 16px;
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-form-container button:hover {
+  background: linear-gradient(to right, #3a539b, #1a2c5b);
+  transform: scale(1.02);
+}
+
+.login-form-container button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.toggle-form-text {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.toggle-link {
+  color: #4b6cb7;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.toggle-link:hover {
+  text-decoration: underline;
+  color: #3a539b;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: -5px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoPop {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-form-container {
+    padding: 30px 20px;
+  }
+}
