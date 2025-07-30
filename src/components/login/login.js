@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 import withNavigation from "../../utils/withNavigation";
 import logo from "../../images/logo.png";
 import "./login.css";
@@ -12,6 +13,13 @@ class Login extends Component {
     errorMessage: "",
     isSubmitting: false,
   };
+
+  componentDidMount() {
+    const token = Cookies.get("token");
+    if (token) {
+      this.props.navigate("/");
+    }
+  }
 
   emailChanged = (e) => {
     this.setState({ email: e.target.value });
@@ -31,45 +39,47 @@ class Login extends Component {
     const formData = new URLSearchParams();
     formData.append("email", email);
     formData.append("password", password);
-    fetch("http://localhost:8080/Ticketlybackend/login", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/x-www-form-urlencoded",
-  },
-  body: formData.toString(),
-  credentials: "include",
-})
-  .then(async (res) => {
-    const data = await res.json();
-    if (res.ok) {
-      if (data.success) {
+    const url = process.env.REACT_APP_BACKEND_URL;
+    fetch(url+"/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: formData.toString(),
+      credentials: "include",
+    })
+      .then(async (res) => {
+        const data = await res.json();
+        if (res.ok) {
+          if (data.success) {
+            this.setState({
+              email: "",
+              password: "",
+              errorMessage: "",
+              isSubmitting: false,
+            });
+            console.log("Success");
+            navigate("/");
+          } else {
+            this.setState({ errorMessage: data.message, isSubmitting: false });
+          }
+        } else {
+          this.setState({ errorMessage: data.message, isSubmitting: false });
+        }
+      })
+      .catch((err) => {
+        console.error("Fetch error:", err);
         this.setState({
-          email: "",
-          password: "",
-          errorMessage: "",
+          errorMessage: "Network error. Please try again.",
           isSubmitting: false,
         });
-        navigate("/");
-      } else {
-        this.setState({ errorMessage: data.message, isSubmitting: false });
-      }
-    } else {
-      this.setState({ errorMessage: data.message, isSubmitting: false });
-    }
-  })
-  .catch((err) => {
-    console.error("Fetch error:", err);
-    this.setState({
-      errorMessage: "Network error. Please try again.",
-      isSubmitting: false,
-    });
-  });
-
+      });
   };
 
   render() {
     const { email, password, showPassword, errorMessage, isSubmitting } =
       this.state;
+
 
     return (
       <div className="login-container">

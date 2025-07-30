@@ -1,0 +1,183 @@
+.main-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 30px;
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-icon {
+  height: 70px;
+  animation: pop-in 0.6s ease-in-out;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.search-movie-input-tag {
+  height: 38px;
+  width: 450px;
+  padding: 0 15px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+  margin-left: 20px;
+  transition: all 0.3s ease;
+}
+
+.search-movie-input-tag::placeholder {
+  color: #ccc;
+}
+
+.search-movie-input-tag:focus {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 10px #00e5ff;
+}
+
+#citySelect {
+  height: 38px;
+  border-radius: 20px;
+  border: none;
+  padding: 0 15px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  margin-left: 20px;
+  transition: 0.3s ease;
+}
+
+#citySelect:focus {
+  outline: none;
+  box-shadow: 0 0 10px #1de9b6;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.login-button,
+.profile-button {
+  padding: 8px 16px;
+  background-color: #1de9b6;
+  color: #000;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-button:hover,
+.profile-button:hover {
+  background-color: #00bfa5;
+  transform: scale(1.05);
+}
+
+/* Profile Dropdown */
+.profile-container {
+  position: relative;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background-color: #ffffff;
+  color: #000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 1001;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.fade-in {
+  animation: fadeSlideIn 0.3s ease forwards;
+}
+
+.fade-out {
+  animation: fadeSlideOut 0.2s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+@keyframes fadeSlideOut {
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+  }
+}
+
+.profile-dropdown a,
+.profile-dropdown button {
+  padding: 12px 20px;
+  display: block;
+  color: #000;
+  text-decoration: none;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.profile-dropdown a:hover,
+.profile-dropdown button:hover {
+  background-color: #f0f0f0;
+}
+
+.header-city-select {
+  padding-left: 5px;
+  padding-right: 50px !important;
+}
+select {
+  border-radius: 8px;
+  padding: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg fill="%23000" height="24" width="24" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+  background-color: white;
+  background-size: 16px;
+}
+

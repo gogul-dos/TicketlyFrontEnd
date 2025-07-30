@@ -1,0 +1,164 @@
+.bt-wrapper {
+  background: linear-gradient(to right, #141e30, #243b55);
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+}
+
+.bt-percentage-banner {
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeInSlide 0.5s ease-out;
+  transition: all 0.4s ease;
+}
+
+.bt-percentage-banner.high {
+  background-color: #2e7d32;
+  color: #d0f8ce;
+  border: 2px solid #66bb6a;
+}
+
+.bt-percentage-banner.medium {
+  background-color: #f57c00;
+  color: #fff3e0;
+  border: 2px solid #ffb74d;
+}
+
+.bt-percentage-banner.low {
+  background-color: #c62828;
+  color: #ffebee;
+  border: 2px solid #ef5350;
+}
+
+.bt-theatre-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.bt-theatre-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px 24px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  animation: fadeInUp 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bt-theatre-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border: 1px solid #ffd54f;
+  box-shadow: 0 0 16px #ffd54f;
+}
+
+.bt-theatre-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffd54f;
+  margin-bottom: 8px;
+}
+
+.bt-theatre-city {
+  font-size: 16px;
+  font-weight: 400;
+  color: #cfd8dc;
+  opacity: 0.85;
+  margin-bottom: 16px;
+}
+
+.bt-showtime-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bt-showtime-btn {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  background-image: linear-gradient(to right, #ff416c, #ff4b2b);
+  transition: transform 0.3s, background-image 0.3s;
+}
+
+.bt-showtime-btn:hover {
+  transform: scale(1.05);
+  background-image: linear-gradient(to right, #ff4b2b, #ff416c);
+}
+
+.bt-error {
+  color: #ff8a80;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .bt-percentage-banner {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  .bt-theatre-card {
+    padding: 16px 18px;
+  }
+
+  .bt-theatre-name {
+    font-size: 20px;
+  }
+
+  .bt-showtime-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.bt-showtime-btn.green {
+  background: linear-gradient(to right, #43e97b, #38f9d7);
+  color: #000;
+}
+
+.bt-showtime-btn.yellow {
+  background: linear-gradient(to right, #fceabb, #f8b500);
+  color: #000;
+}
+
+.bt-showtime-btn.red {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: #fff;
+}

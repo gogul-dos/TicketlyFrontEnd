@@ -1,0 +1,141 @@
+/* ========== Base Container ========== */
+.sd-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 32px 24px;
+  background: #f9fafb;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* ========== Screen Block ========== */
+.sd-screen-block {
+  margin-bottom: 56px;
+  animation: fadeInUp 0.5s ease both;
+}
+
+/* ========== Screen Info Box ========== */
+.sd-screen-info {
+  background: #fff;
+  padding: 20px 24px;
+  border-left: 5px solid #007bff;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+}
+
+.sd-screen-info h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #212121;
+}
+
+.sd-screen-info p {
+  margin: 4px 0 0;
+  color: #555;
+  font-size: 14px;
+}
+
+/* ========== Show Grid ========== */
+.sd-show-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ========== Show Card ========== */
+.sd-show-card {
+  background: white;
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.sd-show-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.sd-show-card p {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.sd-show-card strong {
+  color: #111;
+  font-weight: 600;
+}
+
+/* ========== Book Button ========== */
+.sd-book-btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(255, 65, 108, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sd-book-btn:hover {
+  transform: scale(1.03);
+  background: linear-gradient(135deg, #ff1f5c, #ff3a1a);
+}
+
+/* ========== States ========== */
+.sd-empty,
+.sd-error {
+  text-align: center;
+  font-size: 18px;
+  color: #e53935;
+  margin-top: 60px;
+}
+
+/* ========== Fade Animation ========== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== Mobile Responsive ========== */
+@media (max-width: 768px) {
+  .sd-wrapper {
+    padding: 24px 16px;
+  }
+
+  .sd-show-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sd-show-card {
+    padding: 16px;
+  }
+
+  .sd-book-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .sd-screen-info {
+    padding: 16px;
+  }
+}

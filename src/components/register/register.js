@@ -51,8 +51,9 @@ class Register extends Component {
     formData.append("mobile", mobile);
 
     try {
+      const url = process.env.REACT_APP_BACKEND_URL;
       const response = await fetch(
-        "http://localhost:8080/Ticketlybackend/register",
+        url+"/auth/register",
         {
           method: "POST",
           headers: {

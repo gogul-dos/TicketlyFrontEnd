@@ -1,0 +1,59 @@
+.ticketly-notfound-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+  min-height: 100vh;
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  color: #ffffff;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.ticketly-notfound-image {
+  height: 300px;
+  width: auto;
+  margin-bottom: 30px;
+}
+
+.ticketly-notfound-heading {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.ticketly-notfound-description {
+  font-size: 18px;
+  max-width: 400px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.ticketly-notfound-button {
+  background-color: #ff4757;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ticketly-notfound-button:hover {
+  background-color: #e84118;
+}
+
+@media (max-width: 768px) {
+  .ticketly-notfound-image {
+    height: 180px;
+  }
+
+  .ticketly-notfound-heading {
+    font-size: 28px;
+  }
+
+  .ticketly-notfound-description {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,47 @@
+.shimmer-card .shimmer-poster,
+.shimmer-card .shimmer-title,
+.shimmer-card .shimmer-rating {
+  background: linear-gradient(90deg, #2c2f4a 25%, #3c3f5a 50%, #2c2f4a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.shimmer-card {
+  width: 220px;
+  height: 340px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.shimmer-poster {
+  height: 75%;
+  width: 100%;
+}
+
+.shimmer-info {
+  padding: 10px;
+}
+
+.shimmer-title {
+  height: 18px;
+  margin-bottom: 10px;
+}
+
+.shimmer-rating {
+  height: 14px;
+  width: 60%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
